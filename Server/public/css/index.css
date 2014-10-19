@@ -1,0 +1,78 @@
+
+
+@font-face {
+  font-family: 'Helsinki';
+    src: url('../font/Helsinki/helsinki.ttf')  format('truetype'),
+       url('../font/Helsinki/helsinki.eot?#iefix') format('embedded-opentype'),
+       url('../font/Helsinki/helsinki.woff') format('woff'),
+       url('../font/Helsinki/helsinki.svg') format('svg');
+   }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../font/roboto_regular_macroman/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../font/roboto_regular_macroman/Roboto-Regular-webfont.woff') format('woff'),
+       url('../font/roboto_regular_macroman/Roboto-Regular-webfont.ttf')  format('truetype'),
+       url('../font/roboto_regular_macroman/Roboto-Regular-webfont.svg') format('svg');
+}
+
+
+h1{
+ font-family: 'Helsinki';
+ text-align: center;
+ font-size: 92px;
+}
+
+h2{
+  font-family: 'Helsinki';
+  text-align: center;
+  font-size: 30px;
+}
+
+h3{
+
+}
+
+p{
+  font-family: 'Roboto';
+}
+
+body{
+	font-family: 'Roboto';
+  font-size: 16px;
+}
+
+.tabs dd > a, .tabs .tab-title > a, .accordion .accordion-navigation > a, .accordion dd > a{
+	font-family: 'Roboto';
+  font-size: 16px;
+
+}
+
+td{
+  font-family: 'Roboto';
+}
+
+#title{
+  padding-bottom: 30px;
+}
+#nav{
+  text-align: center;
+
+}
+#tabs{
+  padding-left: 30px;
+}
+
+#data {
+	text-align: center;
+  padding-bottom: 30px;
+}
+
+#footer{
+  font-family: 'Roboto';
+  text-align: right;
+  background: #efefef;
+  padding-top: 10px;
+}
+
+
