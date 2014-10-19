@@ -2,47 +2,136 @@
 <html> 
   <head>
    	<meta charset="utf-8"/>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <script src="js/vendor/modernizr.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/foundation.css"/>
+    <script src="js/vendor/modernizr.js"></script>
   	<title>Dashboaaaaaaad  4 train yo</title>
+	  <link rel="stylesheet" href="/css/index.css"/>
+    <title>HackNTrain</title>
   </head>
-  <body> 
-    <div id="wrapper"> 
-        <div id="current"> 
-          <table>
-            <thead>
-              <tr>
-                <th width="200">Table Header</th>
-                <th>Table Header</th>
-                <th width="150">Table Header</th>
-                <th width="150">Table Header</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Content Goes Here</td>
-                <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-                <td>Content Goes Here</td>
-                <td>Content Goes Here</td>
-              </tr>
-              <tr>
-                <td>Content Goes Here</td>
-                <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-                <td>Content Goes Here</td>
-                <td>Content Goes Here</td>
-              </tr>
-              <tr>
-                <td>Content Goes Here</td>
-                <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-                <td>Content Goes Here</td>
-                <td>Content Goes Here</td>
-              </tr>
-            </tbody>
-          </table>       
-        </div>
-        <div id="timeseries">  
-        
-        </div>
+
+  <body>
+
+  	<!--TITLE-->
+  	<div id="title" class="row">
+	  	<div class="small-12 columns">
+	  		<marquee behavior="alternate" bgcolor="#ffffff"><h1> FUCKIN' TRAINS, MAN</h1></marquee>
+	  		<img src="http://www.picgifs.com/graphics/t/thomas-the-tank-engine/graphics-thomas-the-tank-engine-122719.gif"></img>
+	  	</div>
+
+  	</div>
+
+	<!--DATA-->
+  	<div id="data" class="row">
+
+  		<div id="currentData" class="small-12 medium-5 columns">
+  		  <h2>Current:</h2>
+
+			<table id="dataTable">
+			  <thead>
+			    <tr>
+			      <th width="225">Data type </th>
+			      <th width="175">Value</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <td>Temperature:</td>
+			      <td>tempVal</td>
+			    </tr>
+			    <tr>
+			      <td>Air Pressure:</td>
+			      <td>airVal</td>
+			    </tr>			    
+			    <tr>
+			      <td>Train Speed:</td>
+			      <td>speedVal</td>
+			    </tr>			    
+			    <tr>
+			      <td>General Position:</td>
+			      <td>posVal</td>
+			    </tr>			    
+			    <tr>
+			      <td>Methane Density:</td>
+			      <td>methVal</td>
+			    </tr>			    
+			    <tr>
+			      <td>Light Level:</td>
+			      <td>lightVal</td>
+			    </tr>
+			  </tbody>
+			</table>
+
+			
+			
+  		</div>
+
+  		
+  		<div id="timeSeries" class="small-12 medium-7 columns">
+  			<h2>Time Series Data:</h2>
+
+			<dl class="accordion" data-accordion>
+			  <dd class="accordion-navigation">
+			    <a href="#acc1">Temperature</a>
+			    <div id="acc1" class="content">
+					<div id="container" style="min-width: 500px; height: 300px; margin: 0 auto"></div>
+			    </div>
+			  </dd>
+			  <dd class="accordion-navigation">
+			    <a href="#acc2">Air Pressure</a>
+			    <div id="acc2" class="content">
+			      <img src="http://placehold.it/500x300">
+			    </div>
+			  </dd>
+			  <dd class="accordion-navigation">
+			    <a href="#acc3">Train Speed</a>
+			    <div id="acc3" class="content">
+			      <img src="http://placehold.it/500x300">
+			    </div>
+			  </dd>
+			  <dd class="accordion-navigation">
+			    <a href="#acc4">General Position</a>
+			    <div id="acc4" class="content">
+			      <img src="http://placehold.it/500x300">
+			    </div>
+			  </dd>
+			  <dd class="accordion-navigation">
+			    <a href="#acc5">Methane Density</a>
+			    <div id="acc5" class="content">
+			      <img src="http://placehold.it/500x300">
+			    </div>
+			  </dd>
+			  <dd class="accordion-navigation">
+			    <a href="#acc6">Light Level</a>
+			    <div id="acc6" class="content">
+			      <img src="http://placehold.it/500x300">
+			    </div>
+			  </dd>
+			</dl>
+
+  		</div>
+
+  	</div>
+
+	<!--Footer-->
+	<div id="footer">
+		<div class="row">
+			<p><small>Made at hackNY Fall 2014 by @Shrugs @faiqus @michipster @sarinaorr</small></p>
+		</div>
+	</div>
+
+  	<!--scripts-->
+	  <script src="/js/vendor/jquery.js"></script>
+	  <script src="/js/vendor/fastclick.js"></script>
+	  <script src="js/foundation.min.js"></script>
+	  <script src="js/foundation/foundation.tab.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/data.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script> 
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chart.js"></script>
+	  <script>
+	  $(document).foundation();
+	  </script>
   </body> 
 </html> 
