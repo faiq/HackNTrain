@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded())
 
 app.get('/', function (req, res) { 
-  res.render('index') 
+  res.render('index', {noOfTabs : 10}) 
 }) //
 
 server.listen(5000)
