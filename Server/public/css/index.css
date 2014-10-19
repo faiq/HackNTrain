@@ -21,12 +21,14 @@ h1{
  font-family: 'Helsinki';
  text-align: center;
  font-size: 92px;
+ background: rgb(250,250,250);
 }
 
 h2{
   font-family: 'Helsinki';
   text-align: center;
   font-size: 30px;
+  background: rgb(250,250,250);
 }
 
 h3{
@@ -35,11 +37,23 @@ h3{
 
 p{
   font-family: 'Roboto';
+  background: rgb(250,250,250);
 }
 
 body{
 	font-family: 'Roboto';
   font-size: 16px;
+
+    background-image:  url('/img/tom.jpg');
+    background-size: ;
+    background-position: center center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+
+}
+
+p.foot {
+  background: rgba(250,250,250,0.0);
 }
 
 .tabs dd > a, .tabs .tab-title > a, .accordion .accordion-navigation > a, .accordion dd > a{
@@ -73,6 +87,10 @@ td{
   text-align: right;
   background: #efefef;
   padding-top: 10px;
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  text-align: center;
 }
 
 
