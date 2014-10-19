@@ -13,7 +13,8 @@ var express = require('express'),
     MPL115A1 = require('lib/MPL115A1'),
     MQ4 = require('lib/MQ4'),
     PhotoResistor = require('lib/PhotoResistor'),
-    TMP36 = require('lib/TMP36');
+    TMP36 = require('lib/TMP36'),
+    request = require('request');
 
 
 var app = express();
@@ -69,22 +70,23 @@ finConnect(function() {
 });
 
 onConnect(function () {
-
-
-    setInterval(function() {
-        // every 1 sec, get some sensor data for now
-        /// socket.emit('train', some data here)
-        // console.log(pressureSensor.getPressure());
-        pr.getLight(function(light) {
-            socket.emit('train', {
-                light: light,
-                temp: tempSensor.getTemp(),
-                pressure: getRandomInt(12,16)
-            });
-        });
-    }, 1000);
-
     finConnect();
-
 });
+
+setInterval(function() {
+    // every 1 sec, get some sensor data for now
+    /// socket.emit('train', some data here)
+    // console.log(pressureSensor.getPressure());
+    pr.getLight(function(light) {
+        var data = {
+            light: light,
+            temp: tempSensor.getTemp(),
+            pressure: getRandomInt(12,16)
+        };
+
+        request.post('/die', data);
+
+    });
+
+}, 1000);
 
