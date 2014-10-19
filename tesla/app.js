@@ -7,6 +7,9 @@ var express = require('express'),
     routes = require('./routes'),
     http = require('http'),
     path = require('path'),
+    Ready = require('ready-signal'),
+    r1 = new Ready(),
+    socket = require('socket.io-client')('http://localhost:8080'),
     MPL115A1 = require('lib/MPL115A1'),
     MQ4 = require('lib/MQ4'),
     PhotoResistor = require('lib/PhotoResistor'),
@@ -44,11 +47,19 @@ var methaneSensor = new MQ4(9);
 var pr = new PhotoResistor(15);
 var tempSensor = new TMP36(9);
 
+socket.on('connect', function(){
+  console.log('connected')
+  r1()
+})
 
-setInterval(function() {
+r1(function () { 
+  setInterval(function() {
     // every 1 sec, get some sensor data for now
-    console.log(pressureSensor.getPressure());
+    /// socket.emit('train', some data here) 
+    var opressureSensor.getPressure());
     console.log(methaneSensor.getMethaneLevel());
     console.log(pr.getLight());
     console.log(tempSensor.getTemp());
-}, 1000);
+  }, 1000);
+})
+  
