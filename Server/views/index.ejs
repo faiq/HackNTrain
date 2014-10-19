@@ -15,7 +15,8 @@
   	<!--TITLE-->
   	<div id="title" class="row">
 	  	<div class="small-12 columns">
-	  		<h1> FUCKIN' TRAINS, MAN</h1>
+	  		<marquee behavior="alternate" bgcolor="#ffffff"><h1> FUCKIN' TRAINS, MAN</h1></marquee>
+	  		<img src="http://www.picgifs.com/graphics/t/thomas-the-tank-engine/graphics-thomas-the-tank-engine-122719.gif"></img>
 	  	</div>
 
   	</div>
@@ -60,24 +61,62 @@
 			    </tr>
 			  </tbody>
 			</table>
+
+			
+			
   		</div>
 
+  		
   		<div id="timeSeries" class="small-12 medium-7 columns">
   			<h2>Time Series Data:</h2>
-			<ul class="small-12 medium-12 large-12">
-			  <li>
-			  <p>Temperature</p>
-          	  	<div id="container" style="min-width: 300px; height: 200px; margin: 0 auto"></div>
-          	 </li>
-          	</ul>
-  		</div>
-  	</div>
 
+			<dl class="accordion" data-accordion>
+			  <dd class="accordion-navigation">
+			    <a href="#acc1">Temperature</a>
+			    <div id="acc1" class="content">
+					<div id="container" style="min-width: 500px; height: 300px; margin: 0 auto"></div>
+			    </div>
+			  </dd>
+			  <dd class="accordion-navigation">
+			    <a href="#acc2">Air Pressure</a>
+			    <div id="acc2" class="content">
+			      <img src="http://placehold.it/500x300">
+			    </div>
+			  </dd>
+			  <dd class="accordion-navigation">
+			    <a href="#acc3">Train Speed</a>
+			    <div id="acc3" class="content">
+			      <img src="http://placehold.it/500x300">
+			    </div>
+			  </dd>
+			  <dd class="accordion-navigation">
+			    <a href="#acc4">General Position</a>
+			    <div id="acc4" class="content">
+			      <img src="http://placehold.it/500x300">
+			    </div>
+			  </dd>
+			  <dd class="accordion-navigation">
+			    <a href="#acc5">Methane Density</a>
+			    <div id="acc5" class="content">
+			      <img src="http://placehold.it/500x300">
+			    </div>
+			  </dd>
+			  <dd class="accordion-navigation">
+			    <a href="#acc6">Light Level</a>
+			    <div id="acc6" class="content">
+			      <img src="http://placehold.it/500x300">
+			    </div>
+			  </dd>
+			</dl>
+
+  		</div>
+
+  	</div>
 
 	<!--Footer-->
 	<div id="footer">
 		<div class="row">
-			<p class="foot"><small>Made at hackNY Fall 2014 by @Shrugs @faiqus @michipster @sarinaorr</small></p>
+			<p><small>Made at hackNY Fall 2014 by @Shrugs @faiqus @michipster @sarinaorr</small></p>
 		</div>
 	</div>
 

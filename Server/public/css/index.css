@@ -18,30 +18,29 @@
 
 
 h1{
- font-family: 'Helsinki';
+ font-family: "Comic Sans MS", cursive, sans-serif;
  text-align: center;
- font-size: 92px;
- background: rgb(250,250,250);
+ font-weight: 600;
+ font-size: 72px;
+ color: #FF1629;
 }
 
 h2{
-  font-family: 'Helsinki';
+  font-family: "Comic Sans MS", cursive, sans-serif;
   text-align: center;
   font-size: 30px;
-  background: rgb(250,250,250);
-}
+  color: #FF1629;
+  background: #ffffff;
 
-h3{
 
 }
 
 p{
-  font-family: 'Roboto';
-  background: rgb(250,250,250);
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 body{
-	font-family: 'Roboto';
+	font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 16px;
 
     background-image:  url('/img/tom.jpg');
@@ -52,25 +51,24 @@ body{
 
 }
 
-p.foot {
-  background: rgba(250,250,250,0.0);
-}
-
 .tabs dd > a, .tabs .tab-title > a, .accordion .accordion-navigation > a, .accordion dd > a{
-	font-family: 'Roboto';
+	font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 16px;
 
 }
 
 td{
-  font-family: 'Roboto';
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 #title{
-  padding-bottom: 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
 }
 #nav{
   text-align: center;
+
 
 }
 #tabs{
@@ -79,18 +77,18 @@ td{
 
 #data {
 	text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 250px;
+
 }
 
 #footer{
-  font-family: 'Roboto';
-  text-align: right;
+  font-family: "Comic Sans MS", cursive, sans-serif;
   background: #efefef;
   padding-top: 10px;
-  position: absolute;
+  text-align: right;
+  position: relative;
   bottom: 0%;
   width: 100%;
-  text-align: center;
 }
 
 
