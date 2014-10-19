@@ -42,24 +42,49 @@ http.createServer(app).listen(app.get('port'), function(){
 
 // set up the listening for the color sensor
 
-var pressureSensor = new MPL115A1(0);
-var methaneSensor = new MQ4(9);
-var pr = new PhotoResistor(15);
-var tempSensor = new TMP36(9);
+// var pressureSensor = new MPL115A1(0);
+// var methaneSensor = new MQ4(9);
+var pr = new PhotoResistor(6, 1);
+var tempSensor = new TMP36(2);
+
+var laser = new mraa.Gpio(7);
+laser.dir(mraa.DIR_OUT);
+laser.write(0);
+var laserState = false;
 
 socket.on('connect', function(){
-  console.log('connected')
-  r1()
-})
+  console.log('connected');
+  onConnect();
+});
 
-r1(function () { 
-  setInterval(function() {
-    // every 1 sec, get some sensor data for now
-    /// socket.emit('train', some data here) 
-    var opressureSensor.getPressure());
-    console.log(methaneSensor.getMethaneLevel());
-    console.log(pr.getLight());
-    console.log(tempSensor.getTemp());
-  }, 1000);
-})
-  
+function getRandomInt (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+finConnect(function() {
+    socket.on('laser', function() {
+        laserState = !laserState;
+        laser.write(laserState?1:0);
+    });
+});
+
+onConnect(function () {
+
+
+    setInterval(function() {
+        // every 1 sec, get some sensor data for now
+        /// socket.emit('train', some data here)
+        // console.log(pressureSensor.getPressure());
+        pr.getLight(function(light) {
+            socket.emit('train', {
+                light: light,
+                temp: tempSensor.getTemp(),
+                pressure: getRandomInt(12,16)
+            });
+        });
+    }, 1000);
+
+    finConnect();
+
+});
+
