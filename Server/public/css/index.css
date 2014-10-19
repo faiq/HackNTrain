@@ -52,6 +52,9 @@ td{
   font-family: 'Roboto';
 }
 
+#title{
+  padding-bottom: 30px;
+}
 #nav{
   text-align: center;
 
