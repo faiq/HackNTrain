@@ -1,4 +1,5 @@
 var mpaa = require('mpaa');
+// https://github.com/adafruit/Adafruit_TCS34725/blob/master/Adafruit_TCS34725.h
 
 var TCS34725_ADDRESS = 0x29;
 var TCS34725_COMMAND_BIT = 0x80;
@@ -27,7 +28,7 @@ var TCS34725_BDATAL = 0x1A;    /* Blue channel data */
 var TCS34725_BDATAH = 0x1B;
 
 var TCS34725 = function() {
-    this._i2c = mraa.I2c(0);
+    this._i2c = new mraa.I2c(0);
     this._i2c.address(TCS34725_ADDRESS);
 
 };
