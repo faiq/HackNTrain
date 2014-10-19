@@ -32,7 +32,8 @@ io.on('connection', function (socket) {
     obj.data2.push(data.data2) 
     obj.data3.push(data.data3) 
     obj.data4.push(data.data4) 
-    socket.emit('event', obj) 
+    //socket.emit('event', obj) 
+    console.log('dsafasdf')
   }) 
 })
 
