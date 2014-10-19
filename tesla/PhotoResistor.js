@@ -1,5 +1,6 @@
 var mraa = require('mraa');
 
+// via http://playground.arduino.cc/Learning/PhotoResistor
 var PhotoResistor = function(out, ain) {
     this._out = mraa.Gpio(out);
     this._ain = mraa.Aio(ain);
