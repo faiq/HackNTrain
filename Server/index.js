@@ -4,7 +4,6 @@ var express = require('express')
   , http = require('http')
   , ejs = require('ejs')
   , net = require('net') //this will be the listening thing
-  , edison = require('socket.io-client')('http://localhost:8080')
   , app = express()
   , server = http.createServer(app)
   , io  = require('socket.io')(server)
@@ -18,23 +17,41 @@ app.use(bodyParser.urlencoded())
 app.get('/', function (req, res) { 
   res.render('index', {noOfTabs : 02}) 
 })
-  
+
+var obj = {}
+obj.light= [] 
+obj.temp= []
+obj.pressure= [] 
+var last
+
+app.post('/data', function (req, res) { 
+  if(obj.temp.length > 10) { 
+    obj.temp.push(req.body.temp)
+    last = req.body.temp
+    obj.temp.shift() 
+  } else 
+  obj.temp.push(req.body.temp)
+
+  if (obj.light.length > 10) { 
+    obj.light.push(req.body.light) 
+    obj.light.shift()
+  } else 
+  obj.light.push(req.body.light) 
+
+  if (obj.pressure.length > 10) { 
+    obj.pressure.push(req.body.pressure) 
+    obj.pressure.shift()
+  } else
+   obj.pressure.push(req.body.pressure) 
+    res.end() 
+})
 
 io.on('connection', function (socket) {
-  var obj = {}
-  obj.data1 = [1,2,3,5,6] 
-  obj.data2 = []
-  obj.data3 = [] 
-  obj.data4 = [] 
+  setInterval(function () { 
+  if (last !== obj.temp[obj.temp.length -1])
+    socket.emit('event', obj) 
   
-  socket.on('train', function (data) { 
-    obj.data1.push(data.data1)
-    obj.data2.push(data.data2) 
-    obj.data3.push(data.data3) 
-    obj.data4.push(data.data4) 
-    socket.emit('train', obj) 
-    console.log('dsafasdf')
-  }) 
+  } , 2000)
 })
 
 server.listen(8080)
