@@ -1,5 +1,5 @@
 var express = require('express')
-  , bodyParser = require('body-parser') 
+  , bodyParser = require('body-parser')
   , path = require('path')
   , http = require('http')
   , ejs = require('ejs')
@@ -14,8 +14,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded())
 
-app.get('/', function (req, res) { 
-  res.render('index', {noOfTabs : 02}) 
+app.get('/', function (req, res) {
+  res.render('index', {noOfTabs : 02})
 })
 
 var obj = {}
@@ -54,4 +54,4 @@ io.on('connection', function (socket) {
   } , 2000)
 })
 
-server.listen(8080)
+server.listen(80)
